@@ -7,9 +7,6 @@ import time
 from interface.logger import Logger
 
 class AmbienteAlgoritmo:
-    def __init__(self):
-        pass
-
     def preparar_data(self):
         data = load_breast_cancer()
         self.x = data.data #type: ignore
@@ -20,10 +17,10 @@ class AmbienteAlgoritmo:
         return 1 / (1 + np.exp(-z))
 
     def normalizar(self, X):
-        # Normalización manual: Z = (X - media) / desviación
+        # Normalización: Z = (X - media) / desviación
         media = np.mean(X, axis=0)
-        std = np.std(X, axis=0)
-        return (X - media) / std
+        desviacion = np.std(X, axis=0)
+        return (X - media) / desviacion
 
     def dividir_datos(self, X, y, porcentaje_entrenamiento=0.8):
         # Mezclar aleatoriamente
