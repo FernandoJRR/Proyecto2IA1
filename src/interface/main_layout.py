@@ -10,7 +10,7 @@ from interface.algoritmo_layout import ALayout
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Aprendizaje No Supervisado - Redes Neuronales")
+        self.setWindowTitle("Aprendizaje Supervisado - Redes Neuronales")
         self.setGeometry(100, 100, 800, 600)
         self.initUI()
 
